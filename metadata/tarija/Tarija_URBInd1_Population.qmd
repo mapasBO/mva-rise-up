@@ -1,0 +1,113 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_URBInd1_Population</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>URB Indicator - Density of Population at Sensitive Ages (0-19 and 60+) - Tarija / Indicador URB - Densidad de población en edades sensibles (0-19 y 60+) - Tarija</title>
+  <abstract>----- ENGLISH -----
+Density of population at sensitive ages (0-19 and 60 or more years) per hectare, smoothed and normalized, for the MVA (Urban dimension). It represents the exposure of the people most sensitive to hazards. MVA grid: EPSG:32720, 12.5 m, 1114 x 1194 cells, extent 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Values 0-1; 1 = highest vulnerability.
+
+SOURCES: manzanos_ine_2024, INE 2024 Census: fields edad_0a19 and edad_60omas (men and women). area_urbana_tarija.
+
+METHOD: the sensitive population of each census block (0-19 plus 60 or more years) is spread equally among its cells (rasterized at 6.25 m and aggregated to 12.5 m). It is smoothed with a circular window of 200 m radius and divided by its area (ha) to obtain sensitive people per hectare. Mask: urban-area cells within 100 m of a census block with population (543,610 cells, 81.2% of the urban area). Min-max normalization using the 5th and 95th percentiles of the density inside the mask (0 and 36.9 people/ha).
+
+AGE CRITERION: 'sensitive ages' were defined as 0-19 years (school age through secondary) and 60 or more (older adults according to Bolivian Law 369). It is not equivalent to the INE dependency ratio (0-14 and 65+) because the age groups of the census blocks do not allow that cut.
+
+RESULT: median density 4.8 sensitive people/ha (maximum 72.5); distribution by 0.2-wide classes: 59.0%, 15.8%, 8.6%, 6.9% and 9.8%. Correlation of 0.81 with the earlier total-density layer and coverage of 81% of the urban area versus 45%.
+
+LIMITATIONS: the sum of the age groups (213,222) is lower than the 'personas' field (234,606), about 9%; population is spread uniformly within each block; census blocks outside the grid bounding box are not included (88,974 of 93,525 sensitive people fall inside the grid); the top 5% is saturated at 1.
+
+ORIGINAL NAME: manzanos_ine_2024 (edad_0a19, edad_60omas)
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from INE Bolivia 2024 Census
+PROVENANCE: Computed by the team. Created: 2026-10-12. Last update: 2026-10-12.
+ROLE IN THE MVA (Urban): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -9999, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed
+
+----- ESPAÑOL -----
+Densidad de población en edades sensibles (0-19 y 60 o más años) por hectárea, suavizada y normalizada, para el MVA (dimensión Urbana). Representa la exposición de las personas más sensibles a los riesgos. Grilla del MVA: EPSG:32720, 12.5 m, 1114 x 1194 celdas, extensión 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Valores 0-1; 1 = mayor vulnerabilidad.
+
+FUENTES: manzanos_ine_2024 (Urbano.gpkg), Censo 2024 del INE: campos edad_0a19 y edad_60omas (hombres y mujeres). area_urbana_tarija.
+
+MÉTODO: la población sensible de cada manzano (0-19 más 60 o más años) se reparte por igual entre sus celdas (rasterizado a 6.25 m y agregado a 12.5 m). Se suaviza con una ventana circular de 200 m de radio y se divide entre su área (ha) para obtener personas sensibles por hectárea. Máscara: celdas del área urbana a menos de 100 m de un manzano con población (543,610 celdas, 81.2 % del área urbana). Normalización mínimo-máximo con los percentiles 5 y 95 de la densidad en la máscara (0 y 36.9 personas/ha).
+
+CRITERIO DE EDADES: se definieron como 'edades sensibles' 0-19 años (edad escolar hasta secundaria) y 60 o más (adulto mayor según la Ley 369 de Bolivia). No equivale a la razón de dependencia del INE (0-14 y 65+), porque los grupos de edad de los manzanos no permiten ese corte.
+
+RESULTADO: densidad mediana 4.8 personas sensibles/ha (máximo 72.5); distribución por quintos de 0.2: 59.0 %, 15.8 %, 8.6 %, 6.9 % y 9.8 %. Correlación 0.81 con la densidad total anterior (MVA_URB_Ind_DensidadPoblacional_TAR) y cobertura de 81 % del área urbana frente a 45 %.
+
+LIMITACIONES: la suma de los grupos de edad (213,222) es menor que el campo 'personas' (234,606), alrededor de 9 %; la población se reparte uniformemente dentro de cada manzano; los manzanos fuera del recuadro de la grilla no se incluyen (88,974 de 93,525 personas sensibles quedan en la grilla); el 5 % superior se satura en 1.
+
+NOMBRE ORIGINAL: manzanos_ine_2024 (edad_0a19, edad_60omas)
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from INE Bolivia 2024 Census
+ROL EN EL MVA (Urbano): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -9999, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Urban</keyword>
+    <keyword>Urbano</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>Society</keyword>
+    <keyword>Structure</keyword>
+    <keyword>Transportation</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10: Calculado en QGIS (PyQGIS, GDAL, NumPy, SciPy) para el MVA de Tarija, proyecto RISE_UP (UN-Habitat). Elaborado con asistencia de Claude.</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_URB_Ind_DensidadPoblacionSensible_TAR.tif (Float32, NoData -9999). Saved as Tarija_URBInd1_Population.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>

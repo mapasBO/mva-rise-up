@@ -1,0 +1,21 @@
+# data are not versioned / los datos no se versionan
+*.tif
+*.tiff
+*.gpkg
+*.gpkg-*
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.qgz.bak
+*.aux.xml
+*.bak_*
+__pycache__/
+
+# QGIS / OS
+*.qgs~
+*.qgz~
+.DS_Store
+Thumbs.db
+desktop.ini

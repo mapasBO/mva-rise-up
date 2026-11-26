@@ -1,0 +1,109 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_BIOInd1_MSA</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>BIO Indicator - Biodiversity Loss (1 - MSA) - Tarija / Indicador BIO - Pérdida de biodiversidad (1 - MSA) - Tarija</title>
+  <abstract>----- ENGLISH -----
+Biodiversity loss indicator for the Tarija MVA (Biodiversity dimension), expressed as the complement of mean species abundance (MSA): loss = 1 - MSA. MSA is a metric of local biodiversity intactness: it compares the abundance of each species under human pressure with its abundance in an undisturbed state; 1 = intact species community and 0 = all original species locally extinct. The indicator therefore takes high values where biodiversity loss is greater. Values 0-1, where 1 = highest vulnerability. EPSG:32720 grid, 295.014 m, 48 x 52 cells, extent 314779.5-328940.1 E / 7610169.6-7625510.3 N. Float32, NoData -3.4028235e38.
+
+SOURCE: raster MSA_Biodiversidad_2015 (Data_inventory_Tarija, 2_Biodiversidad), corresponding to the GLOBIO4 'MSA overall' product (all groups), 2015 assessment of Schipper et al. (2020), 'Projecting terrestrial biodiversity intactness with GLOBIO 4', Global Change Biology 26(2): 760-771, downloaded from https://www.globio.info/what-is-globio (section Available GLOBIO4 scenario data). GLOBIO is a family of models associated with the PBL IMAGE model (Netherlands Environmental Assessment Agency). The terrestrial MSA of GLOBIO combines six pressures: land use, road disturbance, fragmentation, hunting, atmospheric nitrogen deposition and climate change. Original raster: EPSG:4326, 731 x 546 cells of 0.00278 degrees (10 arc-seconds, about 300 m, equal to the GLOBIO resolution), values 0-0.832, NoData -999. Reference year: 2015 (confirmed by the team). Model version: GLOBIO 4 (confirmed by the team).
+
+METHOD: prepared by the project team (file dated 09/20/2026). The GLOBIO4 MSA was used as downloaded, with no deliberate resampling or change of resolution by the team; the indicator was obtained as 1 - MSA. The 295 m grid corresponds to the original GLOBIO resolution (10 arc-seconds) expressed in EPSG:32720: the source raster is in EPSG:4326 and this one is in UTM 20S, so the conversion to UTM (reprojection) implies an implicit resampling whose algorithm is not recorded. Check: values do not exactly match nearest neighbor (28% of identical cells, mean difference 0.038) and are closer to a smoothed resampling (bilinear/average: correlation -0.98, mean difference 0.024), so the reprojection probably did not use nearest neighbor.
+
+RESULT: 1,207 cells with value; minimum 0.181, median 0.635, maximum 0.941. For the BIO dimension it is brought to the 12.5 m MVA grid (MVA_BIO_Ind_PerdidaBiodiversidad_TAR_Aligned).
+
+LIMITATIONS: the 295 m resolution is much coarser than the 12.5 m urban grid, so it produces blocks when aligned and does not distinguish differences within the city; MSA is a global pressure model (year 2015) and does not replace field inventories in Tarija; it does not include changes after 2015 (GLOBIO4 also provides 2020 for land use, but not for overall MSA).
+
+ORIGINAL NAME: MSA_Biodiversidad_2015 (reprojected, clipped, inverted)
+SOURCE: UN-Habitat RISE UP - derived from PBL GLOBIO4 MSA via QGIS/GDAL
+PROVENANCE: Computed by the team. Created: 2026-09-20. Last update: 2026-09-20.
+ROLE IN THE MVA (Biodiversity): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -3.40282e+38, 48 x 52 cells, 1 band(s), cell size 295.01 m, CRS EPSG:32720, extent 314779.46, 7610169.57, 328940.11, 7625510.28.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed - resampling method not recorded
+
+----- ESPAÑOL -----
+Indicador de pérdida de biodiversidad para el MVA de Tarija (dimensión Biodiversidad), expresado como el complemento de la abundancia media de especies (MSA): pérdida = 1 - MSA. MSA (Mean Species Abundance) es una métrica de integridad local de la biodiversidad: compara la abundancia de cada especie bajo presión humana con su abundancia en un estado sin perturbar; 1 = comunidad de especies intacta y 0 = todas las especies originales extintas localmente. Por eso el indicador toma valores altos donde hay más pérdida de biodiversidad. Valores 0-1, donde 1 = mayor vulnerabilidad. Grilla EPSG:32720, 295.014 m, 48 x 52 celdas, extensión 314779.5-328940.1 E / 7610169.6-7625510.3 N. Float32, NoData -3.4028235e38.
+
+FUENTE: raster MSA_Biodiversidad_2015 (Data_inventory_Tarija, 2_Biodiversidad), correspondiente al producto "MSA overall" (MSA general, todos los grupos) de GLOBIO4, evaluación 2015 de Schipper et al. (2020), "Projecting terrestrial biodiversity intactness with GLOBIO 4", Global Change Biology 26(2): 760-771, descargado de https://www.globio.info/what-is-globio (sección Available GLOBIO4 scenario data). GLOBIO es una familia de modelos asociada al modelo IMAGE del PBL (Netherlands Environmental Assessment Agency). El MSA terrestre de GLOBIO combina seis presiones: uso del suelo, perturbación por vías, fragmentación, caza, deposición atmosférica de nitrógeno y cambio climático. Raster original: EPSG:4326, 731 x 546 celdas de 0.00278 grados (10 arco-segundos, aproximadamente 300 m, igual a la resolución de GLOBIO), valores 0-0.832, NoData -999. Año de referencia: 2015 (confirmado por el equipo). Versión del modelo: GLOBIO 4 (confirmado por el equipo).
+
+MÉTODO: elaborado por el equipo del proyecto (archivo del 20/09/2026). El MSA de GLOBIO4 se usó tal como se descarga, sin remuestreo deliberado ni cambio de resolución por parte del equipo; el indicador se obtuvo como 1 - MSA. La grilla de 295 m corresponde a la resolución original de GLOBIO (10 arco-segundos) expresada en EPSG:32720: el raster fuente (MSA_Biodiversidad_2015) está en EPSG:4326 y este en UTM 20S, por lo que el paso a UTM (reproyección) implica un remuestreo implícito cuyo algoritmo no está registrado. Verificación: los valores no coinciden exactamente con el vecino más cercano (28% de celdas idénticas, diferencia media 0.038) y son más cercanos a un remuestreo suavizado (bilineal/promedio: correlación -0.98, diferencia media 0.024), por lo que probablemente la reproyección no usó vecino más cercano.
+
+RESULTADO: 1,207 celdas con valor; mínimo 0.181, mediana 0.635, máximo 0.941. Para la dimensión BIO se lleva a la grilla de 12.5 m del MVA (MVA_BIO_Ind_PerdidaBiodiversidad_TAR_Aligned).
+
+LIMITACIONES: la resolución de 295 m es mucho más gruesa que la grilla urbana de 12.5 m, por lo que genera bloques al alinearla y no distingue diferencias dentro de la ciudad; el MSA es un modelo global de presiones (año 2015) y no reemplaza inventarios de campo en Tarija; no incorpora cambios posteriores a 2015 (GLOBIO4 dispone también de 2020 para uso del suelo, pero no de MSA general).
+
+NOMBRE ORIGINAL: MSA_Biodiversidad_2015 (reprojected, clipped, inverted)
+FUENTE: UN-Habitat RISE UP - derived from PBL GLOBIO4 MSA via QGIS/GDAL
+ROL EN EL MVA (Biodiversidad): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -3.40282e+38, 48 x 52 celdas, 1 banda(s), tamaño de celda 295.01 m, SRC EPSG:32720, extensión 314779.46, 7610169.57, 328940.11, 7625510.28.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Biodiversity</keyword>
+    <keyword>Biodiversidad</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>Biota</keyword>
+    <keyword>Environment</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-09-20: Raster elaborado por el equipo del proyecto RISE_UP (UN-Habitat) para el MVA de Tarija a partir de GLOBIO4 MSA overall 2015 (Schipper et al. 2020), invertido (1 - MSA).</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_BIO_Ind_PerdidaBiodiversidad_TAR_Aligned.tif (Float32, NoData -9999). Saved as Tarija_BIOInd1_MSA.</history>
+  <history>2026-10: Metadato redactado con asistencia de Claude; fuente, versión (GLOBIO4) y año (2015) confirmados por el equipo.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314779.45938344794558361" maxy="7625510.27754767332226038" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610169.57287294138222933" minz="nan" maxx="328940.10985243157483637"/>
+  </extent>
+</qgis>

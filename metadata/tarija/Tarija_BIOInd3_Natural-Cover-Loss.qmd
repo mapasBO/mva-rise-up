@@ -1,0 +1,100 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_BIOInd3_Natural-Cover-Loss</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>BIO Indicator - Natural Cover Loss, Three Levels (1985-2024) - Tarija / Indicador BIO - Pérdida de cobertura natural en tres niveles (1985-2024) - Tarija</title>
+  <abstract>----- ENGLISH -----
+Natural cover loss indicator on three levels, for the MVA (Biodiversity dimension), so that healthy cover is not mixed with cover that is already lost. MVA grid: EPSG:32720, 12.5 m, 1114 x 1194 cells, extent 314925-328850 E / 7610425-7625350 N. Float32, NoData -3.4028235e38 outside the study grid.
+
+VALUES: 0 = stable natural cover (natural in 1985 and 2024); 0.5 = never natural (habitat already absent; its loss is permanent but did not change during the period); 1 = recent loss 1985-2024 (natural in 1985, not natural in 2024). Loss is set to 1 because it is the active process the indicator aims to capture. The 0.5 for the 'never natural' center is an analyst judgment that does not come from the data and must be documented in the report; it also makes the indicator consistent with the MSA indicator, which already rates the center as vulnerable (0.7-0.9).
+
+SOURCE: MapBiomas Bolivia land cover 1985 and 2024 (30 m, resampled to 12.5 m by nearest neighbor); natural classes = forest, grassland/shrubland, other natural formation, shrubland and Andean grassland/shrubland (classes 3, 12, 13, 66, 81 and 82). The companion transition map is LULC_Transicion_Natural_1985_2024_TAR.
+
+SUGGESTED VALIDATION: run the BIO dimension with 0.25, 0.5 and 0.75 for the center and check whether hotspots change. If the result barely moves, the choice is not sensitive; if it changes a lot, it must be carefully justified.
+
+LIMITATIONS: MapBiomas has a real resolution of 30 m, so the 12.5 m grid shows blocky edges; part of what is 'natural' in 1985 may be doubtful classification (class 13 dominates the historic center); the 0.5 weight is a judgment.
+
+ORIGINAL NAME: LULC_MapBiomas_1985 and 2024
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from MapBiomas Bolivia
+PROVENANCE: Computed by the team. Created: 2026-10-10. Last update: 2026-10-10.
+ROLE IN THE MVA (Biodiversity): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -3.40282e+38, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed - 0.5 weight to be validated
+
+----- ESPAÑOL -----
+Indicador de pérdida de cobertura natural en tres niveles, para no mezclar la cobertura sana con la ya perdida: 0 = cobertura natural estable (natural en 1985 y 2024); 0.5 = nunca natural (hábitat ya ausente); 1 = pérdida reciente 1985-2024. Clases naturales de MapBiomas Bolivia: 3, 12, 13, 66, 81 y 82. El valor 0.5 es un criterio del analista, no sale de los datos; se recomienda probar 0.25/0.5/0.75 y ver si cambian los hotspots. Grilla del MVA (12.5 m; fuente 30 m).
+
+NOMBRE ORIGINAL: LULC_MapBiomas_1985 and 2024
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from MapBiomas Bolivia
+ROL EN EL MVA (Biodiversidad): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -3.40282e+38, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Biodiversity</keyword>
+    <keyword>Biodiversidad</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>Biota</keyword>
+    <keyword>Environment</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_BIO_Ind_PerdidaCoberturaNatural3N_TAR.tif (Float32, NoData -9999). Saved as Tarija_BIOInd3_Natural-Cover-Loss.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <rights>Contains data from MapBiomas Bolivia (CC-BY 4.0)</rights>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>

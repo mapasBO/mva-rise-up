@@ -1,0 +1,113 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_CCInd4_Landslide</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>CC Indicator - Slope Susceptibility - Tarija / Indicador CC - Susceptibilidad por pendiente - Tarija</title>
+  <abstract>----- ENGLISH -----
+Slope susceptibility for the Tarija MVA (Climate Change dimension, landslide and erosion hazard). First component of a landslide susceptibility indicator; by itself it measures how steep the terrain is relative to the rest of the city. Values 0-1, where 1 = highest relative slope (highest vulnerability). EPSG:32720 grid, 12.5 m, 1114 x 1194, Float32, NoData -9999; 669,246 valid cells (urban area).
+
+SOURCE: Pendiente_Tarija (4_Referencias/Rasters; slope in degrees, 12.5 m, EPSG:32720), derived from the project digital elevation model (DEM_Tarija). The producer and original source of the DEM are not recorded in the project and must be confirmed.
+
+METHOD: Pendiente_Tarija was resampled to the MVA grid with bilinear interpolation (the original grid is not aligned with the MVA grid: offset of a few tenths of a cell). It was normalized between the 5th percentile (0.59 degrees) and the 95th percentile (11.56 degrees) of the slope inside the urban area: 0 up to 0.59 degrees, 1 from 11.56 degrees, linear in between.
+
+RESULT: median 0.31; 0.2-wide classes: 32.2% / 31.4% / 17.9% / 9.0% / 9.5% of cells. By population (centroid of census blocks with people): 38.6% / 35.2% / 15.0% / 6.5% / 4.7%. Maximum slope in the urban area: 39.6 degrees.
+
+WHY THE LAYER CCInd_Deslizamientos_Tarija IS NOT USED: it classifies slope with fixed mountain cuts (15, 25, 35, 45 degrees); in the urban area 97.9% of cells and 99.5% of the population fall in the lowest class, so it does not discriminate between zones of the city.
+
+LIMITATIONS: slope is only one factor of landslide and erosion susceptibility; it does not include geology, soil, rainfall, proximity to streams or cover. Values are relative to Tarija (class 1.0 equals 11.6 degrees or more, not unstable terrain in absolute terms). It is meant to be combined with proximity to streams and bare soil.
+
+ORIGINAL NAME: Pendiente_Tarija (resampled, percentile-normalized)
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from Pendiente_Tarija
+PROVENANCE: Computed by the team. Created: 2026-10-13. Last update: 2026-10-13.
+ROLE IN THE MVA (Climate Change): MVA indicator - current (in 5_Share_MVA_Tarija package); component of composite landslide indicator
+TECHNICAL: GeoTIFF raster, Float32, NoData -9999, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed
+
+----- ESPAÑOL -----
+Susceptibilidad por pendiente para el MVA de Tarija (dimensión Cambio Climático, amenaza de deslizamientos y erosión). Primer componente de un indicador de susceptibilidad a deslizamientos; por sí solo mide qué tan inclinado es el terreno en relación con el resto de la ciudad. Valores 0-1, donde 1 = mayor pendiente relativa (mayor vulnerabilidad). Grilla EPSG:32720, 12.5 m, 1114 x 1194, Float32, NoData -9999; 669,246 celdas válidas (área urbana).
+
+FUENTE: Pendiente_Tarija (4_Referencias/Rasters; pendiente en grados, 12.5 m, EPSG:32720), derivada del modelo digital de elevación del proyecto (DEM_Tarija). El productor y la fuente original del DEM no están registrados en el proyecto y deben confirmarse.
+
+MÉTODO: se remuestreó Pendiente_Tarija a la grilla del MVA con interpolación bilineal (la grilla original no está alineada con la del MVA: desfase de unas décimas de celda). Se normalizó entre el percentil 5 (0.59°) y el percentil 95 (11.56°) de la pendiente dentro del área urbana: 0 hasta 0.59°, 1 desde 11.56°, lineal entre ambos.
+
+RESULTADO: mediana 0.31; clases de 0.2 en 0.2: 32.2% / 31.4% / 17.9% / 9.0% / 9.5% de las celdas. Por población (centroide de manzano con personas): 38.6% / 35.2% / 15.0% / 6.5% / 4.7%. Pendiente máxima en el área urbana: 39.6°.
+
+POR QUÉ NO SE USA LA CAPA CCInd_Deslizamientos_Tarija: clasifica la pendiente con cortes fijos de montaña (15°, 25°, 35°, 45°); en el área urbana el 97.9% de las celdas y el 99.5% de la población quedan en la clase más baja, por lo que no discrimina entre zonas de la ciudad.
+
+LIMITACIONES: la pendiente es solo un factor de la susceptibilidad a deslizamientos y erosión; no incluye geología, suelo, lluvia, cercanía a quebradas ni cobertura. Los valores son relativos a Tarija (la clase 1.0 equivale a 11.6° o más, no a un terreno inestable en términos absolutos). Está pensado para combinarse con cercanía a quebradas y suelo desnudo.
+
+NOMBRE ORIGINAL: Pendiente_Tarija (resampled, percentile-normalized)
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from Pendiente_Tarija
+ROL EN EL MVA (Cambio Climático): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -9999, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Climate Change</keyword>
+    <keyword>Cambio Climático</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package); component of composite landslide indicator</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>ClimatologyMeteorologyAtmosphere</keyword>
+    <keyword>Environment</keyword>
+    <keyword>InlandWaters</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10: Calculado en QGIS (PyQGIS, GDAL, NumPy) para el MVA de Tarija, proyecto RISE_UP (UN-Habitat). Elaborado con asistencia de Claude a partir de Pendiente_Tarija.</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_CC_Ind_SusceptibilidadPendiente_TAR.tif (Float32, NoData -9999). Saved as Tarija_CCInd4_Landslide.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>

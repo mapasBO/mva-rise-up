@@ -1,0 +1,114 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_URBInd5_Access-Facilities</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>URB Indicator - Access to Facilities by Walking Network - Tarija / Indicador URB - Acceso a equipamientos por red caminable - Tarija</title>
+  <abstract>----- ENGLISH -----
+Indicator of access to urban facilities by walking network for the Tarija MVA (Urban dimension). It conceptually replaces the Euclidean-distance index (MVA_URB_Ind_AccesoEquipamientos_TAR, kept unchanged in the project and. Values 0-1, where 1 = lowest access (highest vulnerability). EPSG:32720 grid, 12.5 m, 1114 x 1194, Float32, NoData -9999; 658,914 valid cells (urban area without river and water-body cells).
+
+SOURCES: facilities from the Fiscal Areas and Lands (Areas y Tierras Fiscales) geodatabase (04-11-25): health, education, markets, recreation, sports and cultural facilities. Streets, rivers, water bodies and bridges from OpenStreetMap (c) OpenStreetMap contributors, ODbL, through the walking friction surface URB_Aux_Friccion_Caminata_TAR.
+
+METHOD: (1) For each facility type, the walking time to the nearest facility was computed as accumulated cost over the friction surface (Dijkstra algorithm, 8-cell neighborhood; streets at 5 km/h, off-street 45 s per cell, river as a barrier except at bridges) and expressed in minutes. (2) Each time was normalized between its 5th and 95th percentile within the urban area (minutes): health 4.5-72.4, education 4.5-50.4, markets 6.6-87.7, recreation 2.8-69.0, sports 2.9-57.4, culture 4.9-83.6. (3) Weighted mean: health, education and markets 25% each; recreation, sports and culture 8.3% each (team criterion: essential services weigh more).
+
+SELECTION CRITERIA: health, all facilities (64; 14 fall outside the grid, 50 used); education, only units with preschool or primary level (63 of 112; secondary-only, technical, universities, alternative and special education and higher education are excluded); markets 17; recreation 168 (plazas, parks and gardens); sports 164; culture 47.
+
+RESULT: median 0.32; share of cells per 0.2-wide class: 33.1% / 27.0% / 19.3% / 10.6% / 10.0%. Correlation of 0.92 with the earlier Euclidean index. A version with absolute walking thresholds (health 25 min, education 15, markets 20, recreation 15, sports 25, culture 30) saturates: 62.9% of the city falls in the highest class because facility coverage in the data is low; it is not included here.
+
+LIMITATIONS: weights, speeds (5 km/h) and the off-street cost are team assumptions. The facility layer may be incomplete (for example, 63 preschool/primary units for a city of about 234,000 inhabitants). Facilities outside the grid (14 health) are not counted, which overestimates travel time near the edges. Results depend on OSM having mapped the streets and bridges. Slope, sidewalk quality, capacity and service quality are not considered.
+
+ORIGINAL NAME: 6 facility layers + OSM walking network
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy); (c) OpenStreetMap contributors (ODbL)
+PROVENANCE: Computed by the team. Created: 2026-10-12. Last update: 2026-10-12.
+ROLE IN THE MVA (Urban): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -9999, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only (contains OSM-derived data, ODbL)
+QA/QC: Completed
+
+----- ESPAÑOL -----
+Indicador de acceso a equipamientos urbanos por red caminable para el MVA de Tarija (dimensión Urbano). Reemplaza en concepto al índice por distancia euclidiana (MVA_URB_Ind_AccesoEquipamientos_TAR), que se conserva sin cambios. Valores 0-1, donde 1 = menor acceso (mayor vulnerabilidad). Grilla EPSG:32720, 12.5 m, 1114 x 1194, Float32, NoData -9999; 658,914 celdas válidas (área urbana sin las celdas de río y cuerpos de agua).
+
+FUENTES: equipamientos de la geodatabase Áreas y Tierras Fiscales (04-11-25): Equipamiento_Salud, Eq_Educacion, Eq_Mercados, Eq_Recreativo, Equipamiento_Deportivo y Equipamiento_Cultural. Calles, ríos, cuerpos de agua y puentes de OpenStreetMap (© OpenStreetMap contributors, ODbL), por medio de la superficie de fricción URB_Aux_Friccion_Caminata_TAR.
+
+MÉTODO: (1) Para cada tipo de equipamiento se calculó el tiempo de caminata hasta el más cercano con costo acumulado sobre la superficie de fricción (algoritmo de Dijkstra, vecindad de 8 celdas; calles 5 km/h, fuera de calle 45 s por celda, río como barrera salvo puentes), guardado en minutos como URB_Aux_TiempoCaminata_&lt;tipo>_min_TAR. (2) Cada tiempo se normalizó entre su p5 y su p95 dentro del área urbana (min): salud 4.5-72.4, educación 4.5-50.4, mercados 6.6-87.7, recreación 2.8-69.0, deporte 2.9-57.4, cultura 4.9-83.6. (3) Promedio ponderado: salud, educación y mercados 25% cada uno; recreación, deporte y cultura 8.3% cada uno (criterio del equipo: servicios esenciales pesan más).
+
+CRITERIOS DE SELECCIÓN: salud, todos los establecimientos (64; 14 quedan fuera de la grilla, 50 usados); educación, solo unidades con nivel inicial o primario (63 de 112; se excluyen secundaria sola, técnica, universidades, CEA, CEE y formación superior); mercados 17; recreación 168 (plazas, parques y jardines); deporte 164; cultura 47.
+
+RESULTADO: mediana 0.32; clases de 0.2: 33.1% / 27.0% / 19.3% / 10.6% / 10.0%. Correlación 0.92 con el índice euclidiano anterior. La versión con umbrales absolutos de caminata (salud 25 min, educación 15, mercados 20, recreación 15, deporte 25, cultura 30) se guardó como URB_Aux_AccesoRed_UmbralAbsoluto_TAR y satura: 62.9% de la ciudad en la clase más alta, porque la cobertura de equipamientos de los datos es baja.
+
+LIMITACIONES: los pesos, velocidades (5 km/h) y costo fuera de calle son supuestos del equipo. La capa de equipamientos puede estar incompleta (por ejemplo, 63 unidades de educación inicial o primaria para una ciudad de unos 234,000 habitantes). Los equipamientos fuera de la grilla (14 de salud) no cuentan, lo que sobrestima el tiempo en los bordes. Los resultados dependen de que OSM tenga mapeadas las calles y los puentes. No considera pendiente, calidad de la acera, capacidad ni calidad del servicio.
+
+NOMBRE ORIGINAL: 6 facility layers + OSM walking network
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy); (c) OpenStreetMap contributors (ODbL)
+ROL EN EL MVA (Urbano): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -9999, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only (contains OSM-derived data, ODbL)</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Urban</keyword>
+    <keyword>Urbano</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>Society</keyword>
+    <keyword>Structure</keyword>
+    <keyword>Transportation</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10: Calculado en QGIS (PyQGIS, GDAL, NumPy, SciPy) para el MVA de Tarija, proyecto RISE_UP (UN-Habitat). Elaborado con asistencia de Claude. Calles y agua: OpenStreetMap contributors (ODbL). Equipamientos: GDB Áreas y Tierras Fiscales (04-11-25).</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_URB_Ind_AccesoEquipamientosRed_TAR.tif (Float32, NoData -9999). Saved as Tarija_URBInd5_Access-Facilities.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only (contains OSM-derived data, ODbL)</constraints>
+  <rights>Contains data (c) OpenStreetMap contributors, ODbL 1.0</rights>
+  <license>RISE UP internal use only (contains OSM-derived data, ODbL)</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>

@@ -1,0 +1,110 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_CCInd6_Wildfire-Interface</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>CC Indicator - Urban-Vegetation Interface (Wildfire Hazard) - Tarija / Indicador CC - Interfaz urbano-vegetación (amenaza de incendio) - Tarija</title>
+  <abstract>----- ENGLISH -----
+Indicator of wildfire hazard reaching the urban area of Tarija, for the MVA (Climate Change dimension). It estimates, per cell, the exposure to nearby flammable natural vegetation, modulated by the fire history of the surroundings and by slope. Values 0-1; 1 = highest vulnerability. EPSG:32720 grid, 12.5 m (1114 x 1194 cells), Float32, NoData -9999 outside the urban area.
+
+SOURCES: (1) MapBiomas Bolivia land cover 2024 (LULC_MapBiomas_2024, 30 m): fuel = classes 3, 12, 13, 66, 81 and 82. (2) MVA_CC_Ind_FrecuenciaIncendios_TAR (28.8 m, 0-1), derived from the burned-area frequency 1995-2025 of MapBiomas Fire Bolivia. (3) Pendiente_Tarija (12.5 m, degrees), derived from the Tarija DEM. (4) area_urbana_tarija.
+
+METHOD: layers brought to the MVA grid with a 2 km margin (nearest neighbor for categorical, bilinear for slope). Fuel = fraction of natural vegetation cells in a 250 m circle. History = mean fire frequency in a 1.5 km circle, divided by its 95th percentile in the urban area and clipped to 1. Slope = mean in 250 m divided by 30 degrees and clipped to 1. Raw value = fuel x (1 + history + slope) / 3 (0 if there is no nearby fuel). Min-max normalization with the 5th and 95th percentiles of the raw value in the urban area (0 and 0.372).
+
+RESULT: 0.2-wide classes in the urban area: 57.6%, 17.9%, 8.7%, 5.9% and 9.8% (very low to very high). About 3.4% of the population (INE 2024) lives in cells >= 0.4.
+
+LIMITATIONS: it does not consider fuel moisture, wind or season; MapBiomas (30 m) does not capture small patches; fire history contributes little (only about 2% of the surroundings has a record), so the indicator mostly reflects nearby vegetation and slope; high-value cells are mainly farmland, mosaic and peripheral vegetation, not built-up area.
+
+ORIGINAL NAME: LULC_MapBiomas_2024 + MVA_CC_Ind_FrecuenciaIncendios_TAR + Pendiente_Tarija
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from MapBiomas Bolivia LULC 2024, MapBiomas Fuego and Pendiente_Tarija
+PROVENANCE: Computed by the team. Created: 2026-10-12. Last update: 2026-10-12.
+ROLE IN THE MVA (Climate Change): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -9999, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed
+
+----- ESPAÑOL -----
+Indicador de amenaza de incendio forestal que llega al área urbana de Tarija, para el MVA (dimensión Cambio Climático). Estima, por celda, la exposición a vegetación natural inflamable cercana, modulada por el historial de incendios del entorno y la pendiente. Valores 0-1; 1 = mayor vulnerabilidad. Grilla EPSG:32720, 12.5 m (1114 x 1194 celdas), Float32, NoData -9999 fuera del área urbana.
+
+FUENTES: (1) MapBiomas Bolivia, cobertura del suelo 2024 (LULC_MapBiomas_2024, 30 m): combustible = clases 3, 12, 13, 66, 81 y 82. (2) MVA_CC_Ind_FrecuenciaIncendios_TAR (28.8 m, 0-1), derivado de la frecuencia de áreas quemadas 1995-2025 de MapBiomas Fuego Bolivia. (3) Pendiente_Tarija (12.5 m, grados), derivada del DEM de Tarija. (4) area_urbana_tarija (Urbano.gpkg).
+
+MÉTODO: capas llevadas a la grilla del MVA con margen de 2 km (vecino más cercano en categóricas, bilineal en pendiente). Combustible = fracción de celdas de vegetación natural en un círculo de 250 m. Historial = media de la frecuencia de incendios en un círculo de 1.5 km, dividida entre su percentil 95 en el área urbana y limitada a 1. Pendiente = media en 250 m dividida entre 30 grados y limitada a 1. Valor bruto = combustible x (1 + historial + pendiente) / 3 (0 si no hay combustible cercano). Normalización mínimo-máximo con percentiles 5 y 95 del valor bruto en el área urbana (0 y 0.372).
+
+RESULTADO: clases de 0.2 en el área urbana: 57.6 %, 17.9 %, 8.7 %, 5.9 % y 9.8 % (muy baja a muy alta). Aprox. 3.4 % de la población (INE 2024) vive en celdas >= 0.4.
+
+LIMITACIONES: no considera humedad del combustible, viento ni época del año; MapBiomas (30 m) no capta parches pequeños; el historial de incendios aporta poco (solo ~2 % del entorno tiene registro), por lo que el indicador refleja sobre todo vegetación cercana y pendiente; las celdas de valor alto son principalmente suelo agrícola, mosaico y vegetación periférica, no área construida.
+
+NOMBRE ORIGINAL: LULC_MapBiomas_2024 + MVA_CC_Ind_FrecuenciaIncendios_TAR + Pendiente_Tarija
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from MapBiomas Bolivia LULC 2024, MapBiomas Fuego and Pendiente_Tarija
+ROL EN EL MVA (Cambio Climático): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -9999, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Climate Change</keyword>
+    <keyword>Cambio Climático</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>ClimatologyMeteorologyAtmosphere</keyword>
+    <keyword>Environment</keyword>
+    <keyword>InlandWaters</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10: Calculado en QGIS (PyQGIS, GDAL, NumPy, SciPy) para el MVA de Tarija, proyecto RISE_UP (UN-Habitat). Elaborado con asistencia de Claude.</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_CC_Ind_InterfazUrbanoVegetacion_TAR.tif (Float32, NoData -9999). Saved as Tarija_CCInd6_Wildfire-Interface.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <rights>Contains data from MapBiomas Bolivia (CC-BY 4.0)</rights>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>

@@ -1,0 +1,110 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_URBInd3_Urban-Growth</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>URB Indicator - Urban Growth Weighted by Age 1985-2024 - Tarija / Indicador URB - Crecimiento urbano ponderado por antigüedad 1985-2024 - Tarija</title>
+  <abstract>----- ENGLISH -----
+Urban growth 1985-2024 weighted by age, for the MVA (Urban dimension). It distinguishes recent from old expansion over the same growth area as the binary urban growth indicator. MVA grid: EPSG:32720, 12.5 m, 1114 x 1194 cells, extent 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Values 0-1; 1 = highest vulnerability.
+
+SOURCES: MapBiomas Bolivia land cover for 1985, 1990, 2000, 2010 and 2024 (30 m), class 24 'Urban infrastructure'. area_urbana_tarija.
+
+METHOD: each year is brought to the 12.5 m grid (nearest neighbor). Cells that are urban in 2024 are considered and the first year observed as urban is identified. Values: 0 = already urban in 1985 or not urbanized (no growth); 0.33 = urbanized in 1985-2000 (appears in 1990 or 2000); 0.66 = urbanized in 2000-2010; 1.0 = urbanized in 2010-2024. Mask: urban area.
+
+RESULT (urban area, 10,457 ha): 0 in 84.35% (8,821 ha), 0.33 in 5.82% (608 ha), 0.66 in 6.6% (691 ha) and 1.0 in 3.23% (337 ha). The cells with a value above 0 (104,724) coincide with those of the binary 1985-2024 indicator.
+
+LIMITATIONS: the value 0 mixes the consolidated 1985 center with unbuilt urban land; the period cuts and weights are methodological criteria; it depends on the quality of the MapBiomas urban class; it shares its source with the BIO natural cover loss (561 ha of loss became urban).
+
+ORIGINAL NAME: LULC_MapBiomas_1985/1990/2000/2010/2024 (class 24)
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from MapBiomas Bolivia Collection 3.0
+PROVENANCE: Computed by the team. Created: 2026-10-11. Last update: 2026-10-11.
+ROLE IN THE MVA (Urban): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -9999, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed
+
+----- ESPAÑOL -----
+Crecimiento urbano 1985-2024 ponderado por antigüedad, para el MVA (dimensión Urbana). Distingue la expansión reciente de la antigua con la misma superficie de crecimiento del indicador binario URBInd_CrecimientoUrbano_Tarija. Grilla del MVA: EPSG:32720, 12.5 m, 1114 x 1194 celdas, extensión 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Valores 0-1; 1 = mayor vulnerabilidad.
+
+FUENTES: MapBiomas Bolivia, cobertura del suelo 1985, 1990, 2000, 2010 y 2024 (LULC_MapBiomas_*, 30 m), clase 24 'Infraestructura urbana'. area_urbana_tarija (Urbano.gpkg).
+
+MÉTODO: cada año se lleva a la grilla de 12.5 m (vecino más cercano). Se consideran las celdas urbanas en 2024 y se identifica el primer año observado como urbano. Valores: 0 = ya urbano en 1985 o sin urbanizar (sin crecimiento); 0.33 = urbanizado en 1985-2000 (aparece en 1990 o 2000); 0.66 = urbanizado en 2000-2010; 1.0 = urbanizado en 2010-2024. Máscara: área urbana.
+
+RESULTADO (área urbana, 10,457 ha): 0 en 84.35 % (8,821 ha), 0.33 en 5.82 % (608 ha), 0.66 en 6.6 % (691 ha) y 1.0 en 3.23 % (337 ha). Las celdas con valor mayor que 0 (104,724) coinciden con las del indicador binario 1985-2024.
+
+LIMITACIONES: el valor 0 mezcla el centro consolidado de 1985 con el suelo urbano sin construir; los cortes de periodo y los pesos son criterio metodológico; depende de la calidad de la clase urbana de MapBiomas; comparte fuente con la pérdida de cobertura natural de BIO (561 ha de pérdida pasaron a urbano).
+
+NOMBRE ORIGINAL: LULC_MapBiomas_1985/1990/2000/2010/2024 (class 24)
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from MapBiomas Bolivia Collection 3.0
+ROL EN EL MVA (Urbano): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -9999, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Urban</keyword>
+    <keyword>Urbano</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>Society</keyword>
+    <keyword>Structure</keyword>
+    <keyword>Transportation</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10: Calculado en QGIS (PyQGIS, GDAL, NumPy, SciPy) para el MVA de Tarija, proyecto RISE_UP (UN-Habitat). Elaborado con asistencia de Claude.</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_URB_Ind_CrecimientoUrbanoPonderado_TAR.tif (Float32, NoData -9999). Saved as Tarija_URBInd3_Urban-Growth.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <rights>Contains data from MapBiomas Bolivia (CC-BY 4.0)</rights>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>

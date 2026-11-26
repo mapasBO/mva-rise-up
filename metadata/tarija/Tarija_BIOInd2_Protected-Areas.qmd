@@ -1,0 +1,112 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_BIOInd2_Protected-Areas</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>BIO Indicator - Protection Weighted by Zone Type - Tarija / Indicador BIO - Protección ponderada por tipo de zona (areas_protegidas_Tja) - Tarija</title>
+  <abstract>----- ENGLISH -----
+Indicator of environmental lack of protection of urban land in Tarija for the MVA (Biodiversity dimension), weighted by the zone type of the protected areas layer (areas_protegidas_Tja). It replaces the binary indicator MVA_BIO_Ind_FueraAreaProtegida_TAR (295 m), built with the same layer without distinguishing types. MVA grid: EPSG:32720, 12.5 m, 1114 x 1194 cells, extent 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Values 0-1; 1 = highest vulnerability.
+
+SOURCES: areas_protegidas_Tja (Tarija_citycontext_2026.gdb; 11 polygons, field 'Tipo'). area_urbana_tarija. MapBiomas Bolivia 1985-2024 (to contrast effective protection).
+
+METHOD: each polygon is rasterized at 12.5 m (cell center) with the value of its type: natural and scenic areas (ZENP) = 0; urban park protection (ZPU) = 0.25; public domain zone of rivers, streams and torrents (ZDP) = 0.5; conditioned intensive protection, in conflict (ZPC) = 0.75; airport surrounding protection (ZPCA) = 1 (does not protect biodiversity); outside any zone = 1. Where polygons overlap, the lower (more protective) value is used. Mask: urban area.
+
+WEIGHTING CRITERION: order by legal protection level, adjusted by behavior observed in 1985-2024 (MapBiomas): ZENP urbanized from 0.4% to 2.3% and its natural cover went from 71% to 51%; ZPU 7% to 22% urban; ZDP 6% to 14% urban and natural cover from 65% to 35%; ZPC 2.7% to 20.6% urban and natural cover from 77% to 16%; ZPCA no urbanization but natural cover from 77% to 28%. The weights are a methodological decision of the team.
+
+RESULT (urban area): 4.8% of cells with value 0, 0.6% with 0.25, 9.9% with 0.5, 0.5% with 0.75 and 84.2% with 1. When replacing the binary, the BIO vulnerability (MVA_BIO_Vulnerabilidad_v2_TAR) correlates 0.80 with the previous version and 91% of the top 20% coincides.
+
+LIMITATIONS: national protected areas are not included (about 756 ha inside the bounding box); the public domain zone (rivers and streams) coincides with the hazard zone of the CC flood indicator, so the most protective value is avoided for it.
+
+ORIGINAL NAME: areas_protegidas_Tja (field Tipo)
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from GAM Tarija PMOT zoning
+PROVENANCE: Computed by the team. Created: 2026-10-12. Last update: 2026-10-12.
+ROLE IN THE MVA (Biodiversity): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -9999, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed - weights are a team decision
+
+----- ESPAÑOL -----
+Indicador de desprotección ambiental del suelo urbano de Tarija para el MVA (dimensión Biodiversidad), ponderado según el tipo de zona de la capa areas_protegidas_Tja. Reemplaza al indicador binario MVA_BIO_Ind_FueraAreaProtegida_TAR (295 m), construido con la misma capa sin distinguir tipos. Grilla del MVA: EPSG:32720, 12.5 m, 1114 x 1194 celdas, extensión 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Valores 0-1; 1 = mayor vulnerabilidad.
+
+FUENTES: areas_protegidas_Tja (Tarija_citycontext_2026.gdb; 11 polígonos, campo 'Tipo'). area_urbana_tarija (Urbano.gpkg). MapBiomas Bolivia 1985-2024 (para contrastar la protección efectiva).
+
+MÉTODO: cada polígono se rasteriza a 12.5 m (centro de celda) con el valor según su tipo: espacios naturales y paisajísticos (ZENP) = 0; protección de parques urbanos (ZPU) = 0.25; zona de dominio público de ríos, quebradas y torrenteras (ZDP) = 0.5; protección intensiva condicionada, en conflicto (ZPC) = 0.75; protección circundante del aeropuerto (ZPCA) = 1 (no protege biodiversidad); fuera de toda zona = 1. Donde se solapan polígonos se toma el valor menor (más protector). Máscara: área urbana.
+
+CRITERIO DE PESOS: orden según el nivel legal de protección, ajustado por el comportamiento observado 1985-2024 (MapBiomas): ZENP urbanizó 0.4 % a 2.3 % y su cobertura natural pasó de 71 % a 51 %; ZPU 7 % a 22 % urbano; ZDP 6 % a 14 % urbano y cobertura natural de 65 % a 35 %; ZPC 2.7 % a 20.6 % urbano y cobertura natural de 77 % a 16 %; ZPCA sin urbanización pero cobertura natural de 77 % a 28 %. Los pesos son una decisión metodológica del equipo.
+
+RESULTADO (área urbana): 4.8 % de las celdas con valor 0, 0.6 % con 0.25, 9.9 % con 0.5, 0.5 % con 0.75 y 84.2 % con 1. Al sustituir al binario, la vulnerabilidad BIO (MVA_BIO_Vulnerabilidad_v2_TAR) correlaciona 0.80 con la versión anterior y el 91 % del 20 % más alto coincide.
+
+LIMITACIONES: las áreas protegidas nacionales no están incluidas (unas 756 ha dentro del recuadro); la zona de dominio público (ríos y quebradas) coincide con la zona de amenaza del indicador de inundación de CC, por lo que se evita darle el valor más protector.
+
+NOMBRE ORIGINAL: areas_protegidas_Tja (field Tipo)
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from GAM Tarija PMOT zoning
+ROL EN EL MVA (Biodiversidad): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -9999, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Biodiversity</keyword>
+    <keyword>Biodiversidad</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>Biota</keyword>
+    <keyword>Environment</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10: Calculado en QGIS (PyQGIS, GDAL, NumPy, SciPy) para el MVA de Tarija, proyecto RISE_UP (UN-Habitat). Elaborado con asistencia de Claude.</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_BIO_Ind_ProteccionPonderada_TAR.tif (Float32, NoData -9999). Saved as Tarija_BIOInd2_Protected-Areas.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>

@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. / Si usa este trabajo, cítelo como se indica."
+title: "MVA RISE UP - Multilayered Vulnerability Assessment for Tarija, Bolivia"
+authors:
+  - family-names: "Molina"
+    given-names: "R."
+    affiliation: "UN-Habitat - Andean Countries (RISE UP)"
+version: "1.0.0"
+date-released: "2026-11-25"
+license: MIT
+keywords: [MVA, vulnerability, climate change, biodiversity, urban, QGIS, Tarija, Bolivia, UN-Habitat, RISE UP]
+references:
+  - type: report
+    title: "Geospatial Workflow for Multilayered Vulnerability Assessment (MVA)"
+    authors:
+      - name: "UN-Habitat"
+      - name: "UNITAR-UNOSAT"
+    year: 2024
+    notes: "RISE UP. Licensed CC BY-NC-ND; cited, not reproduced."

@@ -1,0 +1,21 @@
+city: Tarija
+country: BOL
+crs: EPSG:32720            # WGS 84 / UTM zone 20S
+grid:
+  cell_size_m: 12.5
+  xmin: 314925
+  ymax: 7625350
+  ncols: 1114
+  nrows: 1194
+nodata: -9999
+root: "C:/MVA/BOL/Tarija"
+source_inventory: "C:/DATA/Data_inventory_Tarija"
+aoi: Data_Output/Base_Layer/Tarija_UrbanArea.gpkg
+hexagon_size_m: 500
+indicators:
+  CC:  [CCInd3_Riverine-Flood, CCInd4_Landslide, CCInd5_Urban-Heat-Island, CCInd6_Wildfire-Interface]
+  BIO: [BIOInd1_MSA, BIOInd2_Protected-Areas, BIOInd3_Natural-Cover-Loss]
+  URB: [URBInd1_Population, URBInd3_Urban-Growth, URBInd4_Informal-Settlement, URBInd5_Access-Facilities]
+not_applicable: [CCInd1_Coastal-Erosion, CCInd2_Coastal-Inundation]
+excluded: [URBInd2_Land-Cover]   # team decision 2026-11-25
+# CCInd4_Landslide = slope susceptibility only (MVA_CC_Ind_SusceptibilidadPendiente_TAR)

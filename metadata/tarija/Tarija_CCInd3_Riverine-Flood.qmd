@@ -1,0 +1,109 @@
+<!DOCTYPE qgis>
+<qgis version="3.44.8-Solothurn">
+  <identifier>Tarija_CCInd3_Riverine-Flood</identifier>
+  <parentidentifier>RISE_UP Tarija MVA 2026 - UN-Habitat</parentidentifier>
+  <language>eng; spa</language>
+  <type>dataset</type>
+  <title>CC Indicator - Flood Hazard (Flow-Path HAND) - Tarija / Indicador CC - Amenaza de inundación (HAND por flujo) - Tarija</title>
+  <abstract>----- ENGLISH -----
+Indicator of fluvial and torrential flood susceptibility for the MVA (Climate Change dimension), based on the height of each cell above the channel it drains to (HAND, Height Above Nearest Drainage), computed by following the flow path. MVA grid: EPSG:32720, 12.5 m, 1114 x 1194 cells, extent 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Values 0-1; 1 = highest vulnerability.
+
+SOURCES: DEM_Tarija (12.5 m, 4_Referencias). Channels from CambioClimatico.gpkg: main = layer 'rios' with a name (excluding 'LIMITE...' and 'LAGO...') plus polygons 'rios_arroyos'; secondary = unnamed 'rios', 'rios_intermitentes' and 'quebradas'. area_urbana_tarija.
+
+METHOD: DEM window with a 1.5 km margin. Channels rasterized at 12.5 m (all touched cells). Stream burning: -5 m on the DEM at channel cells dilated by 1 cell. Depression filling (Wang and Liu, minimum slope 0.01 degrees). D8 flow direction (steepest descent among 8 neighbors). Each cell is followed downstream to the first channel of the group; HAND = elevation of the original DEM at the cell minus the minimum of the original DEM (3x3) at that channel cell; negative values = 0. Main score = 1 - HAND/10 m (10 m cut from the MVA manual example); secondary = 1 - HAND/3 m; both clipped to 0-1. Final value = maximum of the two. Outside the urban area it is NoData.
+
+RESULT (urban area): score > 0 in 27.5% of cells, > 0.4 in 17.5% and > 0.8 in 6.8%. 12.5% of built-up area (about 437 ha) has a score > 0.4. Mean score 0.44 inside the public domain zone (rivers and streams) versus 0.13 outside; 92% of the MapBiomas river cells > 0.4. Correlation of 0.24 with the earlier 28.8 m indicator and 0.65 with the Euclidean-distance version. Companion raster: CC_HANDflujo_Principal_m_TAR (HAND in meters with respect to the main channel).
+
+LIMITATIONS: it depends on the mapped channels being correct and complete; the 12.5 m DEM is a surface model (noise from buildings and vegetation) and does not capture small or canalized channels; it does not consider hydraulic works, channel capacity or discharge; the 10 m and 3 m thresholds are methodological criteria and should be validated with known flood zones.
+
+ORIGINAL NAME: DEM_Tarija + rios / rios_arroyos / rios_intermitentes / quebradas
+SOURCE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from DEM_Tarija and CambioClimatico.gpkg channels
+PROVENANCE: Computed by the team. Created: 2026-10-12. Last update: 2026-10-12.
+ROLE IN THE MVA (Climate Change): MVA indicator - current (in 5_Share_MVA_Tarija package)
+TECHNICAL: GeoTIFF raster, Float32, NoData -9999, 1114 x 1194 cells, 1 band(s), cell size 12.50 m, CRS EPSG:32720, extent 314925.00, 7610425.00, 328850.00, 7625350.00.
+USE RESTRICTIONS: RISE UP internal use only
+QA/QC: Completed
+
+----- ESPAÑOL -----
+Indicador de susceptibilidad a inundación fluvial y torrencial para el MVA (dimensión Cambio Climático), basado en la altura de cada celda sobre el cauce al que drena (HAND, Height Above Nearest Drainage), calculada siguiendo el camino del flujo. Grilla del MVA: EPSG:32720, 12.5 m, 1114 x 1194 celdas, extensión 314925-328850 E / 7610425-7625350 N. Float32, NoData -9999. Valores 0-1; 1 = mayor vulnerabilidad.
+
+FUENTES: DEM_Tarija (12.5 m, 4_Referencias). Cauces de CambioClimatico.gpkg: principales = capa 'rios' con nombre (se excluyen 'LIMITE...' y 'LAGO...') más polígonos 'rios_arroyos'; secundarios = 'rios' sin nombre, 'rios_intermitentes' y 'quebradas'. area_urbana_tarija (Urbano.gpkg).
+
+MÉTODO: ventana del DEM con margen de 1.5 km. Cauces rasterizados a 12.5 m (todas las celdas tocadas). Quemado de cauces: -5 m al DEM en las celdas de cauce dilatadas 1 celda. Relleno de depresiones (Wang y Liu, pendiente mínima 0.01 grados). Dirección de flujo D8 (descenso más pronunciado entre 8 vecinas). Cada celda se sigue aguas abajo hasta el primer cauce del grupo; HAND = cota del DEM original de la celda menos el mínimo del DEM original (3x3) en esa celda de cauce; valores negativos = 0. Puntaje principal = 1 - HAND/10 m (corte de 10 m del ejemplo del manual MVA); secundario = 1 - HAND/3 m; ambos limitados a 0-1. Valor final = máximo de los dos. Fuera del área urbana es NoData.
+
+RESULTADO (área urbana): puntaje > 0 en 27.5 % de las celdas, > 0.4 en 17.5 % y > 0.8 en 6.8 %. El 12.5 % de lo construido (unas 437 ha) queda con puntaje > 0.4. Puntaje medio 0.44 dentro de la zona de dominio público (ríos y quebradas) frente a 0.13 fuera; 92 % de las celdas de río de MapBiomas > 0.4. Correlación 0.24 con el indicador anterior de 28.8 m y 0.65 con la versión por distancia euclidiana. Raster complementario: CC_HANDflujo_Principal_m_TAR (HAND en metros respecto del cauce principal).
+
+LIMITACIONES: depende de que los cauces mapeados sean correctos y completos; el DEM de 12.5 m es un modelo de superficie (ruido por edificaciones y vegetación) y no capta canales pequeños o encauzados; no considera obras hidráulicas, capacidad de los cauces ni caudales; los umbrales de 10 m y 3 m son criterio metodológico y conviene validarlos con zonas inundables conocidas.
+
+NOMBRE ORIGINAL: DEM_Tarija + rios / rios_arroyos / rios_intermitentes / quebradas
+FUENTE: UN-Habitat RISE UP - computed in QGIS (PyQGIS, GDAL, NumPy, SciPy) from DEM_Tarija and CambioClimatico.gpkg channels
+ROL EN EL MVA (Cambio Climático): Indicador MVA - vigente
+DATOS TÉCNICOS: Raster GeoTIFF, Float32, NoData -9999, 1114 x 1194 celdas, 1 banda(s), tamaño de celda 12.50 m, SRC EPSG:32720, extensión 314925.00, 7610425.00, 328850.00, 7625350.00.
+RESTRICCIONES DE USO: RISE UP internal use only</abstract>
+  <keywords vocabulary="MVA dimension / Dimensión MVA">
+    <keyword>Climate Change</keyword>
+    <keyword>Cambio Climático</keyword>
+  </keywords>
+  <keywords vocabulary="MVA role / Rol MVA">
+    <keyword>MVA indicator - current (in 5_Share_MVA_Tarija package)</keyword>
+    <keyword>Indicador MVA - vigente</keyword>
+  </keywords>
+  <keywords vocabulary="Place / Lugar">
+    <keyword>Tarija</keyword>
+    <keyword>Cercado</keyword>
+    <keyword>Bolivia</keyword>
+  </keywords>
+  <keywords vocabulary="Project / Proyecto">
+    <keyword>RISE_UP</keyword>
+    <keyword>UN-Habitat</keyword>
+    <keyword>Multilayered Vulnerability Assessment (MVA)</keyword>
+  </keywords>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>ClimatologyMeteorologyAtmosphere</keyword>
+    <keyword>Environment</keyword>
+    <keyword>InlandWaters</keyword>
+  </keywords>
+  <contact>
+    <name>R. Molina</name>
+    <organization>UN-Habitat - Andean Countries (RISE_UP)</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>custodian</role>
+  </contact>
+  <contact>
+    <name></name>
+    <organization>UN-Habitat RISE UP</organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role>owner</role>
+  </contact>
+  <links/>
+  <history>2026-10: Calculado en QGIS (PyQGIS, GDAL, NumPy, SciPy) para el MVA de Tarija, proyecto RISE_UP (UN-Habitat). Elaborado con asistencia de Claude.</history>
+  <history>2026-11-25: Phase 1 of the MVA guide workflow - cell values copied unchanged from MVA_CC_Ind_AmenazaInundacion_HANDflujo_TAR.tif (Float32, NoData -9999). Saved as Tarija_CCInd3_Riverine-Flood.</history>
+  <history>2026-10-28: Bilingual metadata (EN/ES) generated from the Tarija_MVA_2026.qgz project and the Data Inventory (rev. 2026-10-15), RISE_UP / UN-Habitat. Prepared with assistance from Claude.</history>
+  <dates/>
+  <fees></fees>
+  <constraints type="Use / Uso">RISE UP internal use only</constraints>
+  <license>RISE UP internal use only</license>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>PROJCRS["WGS 84 / UTM zone 20S",BASEGEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["UTM zone 20S",METHOD["Transverse Mercator",ID["EPSG",9807]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",-63,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["Scale factor at natural origin",0.9996,SCALEUNIT["unity",1],ID["EPSG",8805]],PARAMETER["False easting",500000,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",10000000,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Navigation and medium accuracy spatial referencing."],AREA["Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay."],BBOX[-80,-66,0,-60]],ID["EPSG",32720]]</wkt>
+      <proj4>+proj=utm +zone=20 +south +datum=WGS84 +units=m +no_defs</proj4>
+      <srsid>3170</srsid>
+      <srid>32720</srid>
+      <authid>EPSG:32720</authid>
+      <description>WGS 84 / UTM zone 20S</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial minx="314925" maxy="7625350" dimensions="2" maxz="nan" crs="EPSG:32720" miny="7610425" minz="nan" maxx="328850"/>
+  </extent>
+</qgis>
